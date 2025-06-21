@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+//const PORT = 3000;
 
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 const authRoutes = require('./routes/auth');
 const gurukulaRoutes = require('./routes/gurukula');
 const studentRoutes = require('./routes/student');
